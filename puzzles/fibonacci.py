@@ -31,7 +31,7 @@ def fibonacci_memoise(num):
 	cache[num] = val
 	return val
 
-# decorator 
+# decorator version
 
 def memoise(fun):
 	cache = {}
@@ -44,7 +44,7 @@ def memoise(fun):
 			return val
 	return wrapper
 
-# non recursive
+# non recursive version
 
 def fibonacci_non_recursive(num):
     a,b = 0,1
@@ -56,29 +56,32 @@ if __name__=='__main__':
 
 	start = time.time()
 	for i in range(0, 30): # Higher input will take severe duplicate calculations
-		print i, fibonacci(i)
+		print(i, fibonacci(i))
 	end = time.time()
-	print 'Total Execution Time : {}'.format(end-start)
+	print('Total Execution Time : {}'.format(end-start))
 	time.sleep(1)
 
 	start = time.time()
 	for i in range(0, 1000):
-		print i, fibonacci_memoise(i)
+		print(i, fibonacci_memoise(i))
 	end = time.time()
-	print 'Total Execution Time : {}'.format(end-start)		
+	print('Total Execution Time : {}'.format(end-start))
 	time.sleep(1)
 
 	start = time.time()
 	fibonacci = memoise(fibonacci)
 	for i in range(0, 1000):
-		print i, fibonacci(i)
+		print(i, fibonacci(i))
 	end = time.time()
-	print 'Total Execution Time : {}'.format(end-start)
+	print('Total Execution Time : {}'.format(end-start))
 	time.sleep(1)
 
 	start = time.time()
 	for i in range(0, 10): # Higher input will take severe duplicate calculations
-		print i, fibonacci_non_recursive(i)
+		print(i, fibonacci_non_recursive(i))
 	end = time.time()
-	print 'Total Execution Time : {}'.format(end-start)
+	print('Total Execution Time : {}'.format(end-start))
 	time.sleep(1)
+
+	import sys
+	print(sys.version)
